@@ -1,0 +1,46 @@
+
+@import "./assets/scss/theme_setting_variable";
+@import "./assets/scss/template_styling";
+
+html, body { height: 100%; font-size: $fontsize !important;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.navbar-collapse-header {
+    display: none;
+}
+.navbar-brand
+{
+    .header-logo {width: auto;height: 30px;}
+}
+
+a{color: $achnor_color1;}
+a:hover {color: $achnor_color1_hover;}
+
+h1 {font-size: 50px !important;}
+h2 {font-size: 30px !important;}
+h3 {font-size: 20px !important;}
+@media (max-width: 991.98px)
+{
+    .navbar-horizontal .navbar-collapse {
+        position: absolute;
+        z-index: 1050;
+        top: 0;
+        right: 0;
+        left: 0;
+        overflow-y: auto;
+        width: calc(100% - 1.4rem);
+        height: auto!important;
+        margin: .7rem;
+        opacity: 0;
+    }
+}
+
+
+
+footer 
+{
+    a{color: $achnor_color2;}
+    a:hover{color: $achnor_color2_hover;}
+}
+

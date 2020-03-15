@@ -1,0 +1,36 @@
+@import "../../../../assets/scss/theme_setting_variable";
+.home-product-show
+{
+    .bg-primary {
+        background-color: $primary_color !important;
+    }
+    .bg-gradient-red {
+        background: linear-gradient($bg_gradient_red)!important;
+        i {color: #fff;}
+    }
+    .bg-gradient-success {
+        background: linear-gradient($bg_gradient_success)!important;
+        i {color: #fff;}
+    }
+    .bg-gradient-info {
+        background: linear-gradient($bg_gradient_info)!important;
+        i {color: #fff;}
+    }
+    .bg-gradient-warning {
+        background: linear-gradient($bg_gradient_warning)!important;
+        i {color: #fff;}
+    }
+
+    .icon-shape {
+        display: inline-flex;
+        padding: 12px;
+        text-align: center;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+    }
+    .icon {
+        width: 3rem;
+        height: 3rem;
+    }
+}
