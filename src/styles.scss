@@ -1,9 +1,40 @@
 
 @import "./assets/scss/theme_setting_variable";
 @import "./assets/scss/template_styling";
+@import "./assets/scss/nucleo/nucleo.scss";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
+@import "./assets/font-awesome/font-awesome";
 
-html, body { height: 100%; font-size: $fontsize !important;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%;}
+body { margin: 0; font-family: 'Montserrat', sans-serif; }
+p
+{
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+
+
+.text-white {
+    color: $white_color !important;
+}
+
+@for $i from 1 through 5 {
+
+    .font_wt_#{nth($font_wt_array, $i)}
+    {
+        font-weight: nth($font_wt_array, $i);
+    }
+}
+
+@for $i from 1 through 6 {
+
+    .pad_#{nth($padding_array, $i)}
+    {
+        font-weight: nth($padding_array, $i);
+    }
+}
 
 
 .navbar-collapse-header {
@@ -17,9 +48,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 a{color: $achnor_color1;}
 a:hover {color: $achnor_color1_hover;}
 
-h1 {font-size: 50px !important;}
-h2 {font-size: 30px !important;}
-h3 {font-size: 20px !important;}
+ 
 @media (max-width: 991.98px)
 {
     .navbar-horizontal .navbar-collapse {

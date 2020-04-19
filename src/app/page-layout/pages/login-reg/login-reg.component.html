@@ -23,43 +23,51 @@
         <div class="col-lg-5 col-md-7">
           <div class="card bg-secondary border-0 mb-0">
             <div class="card-header bg-transparent pb-5">
-              <div class="text-muted text-center mt-2 mb-3"><small>Sign in with</small></div>
-              <div class="btn-wrapper text-center">
-                <a href="#" class="btn btn-neutral btn-icon">
-                  <span class="btn-inner--icon"><img src=""></span>
-                  <span class="btn-inner--text">Google</span>
-                </a>
+              <div class="text-muted text-center mt-2 mb-3">
+                sign in with credentials
               </div>
+               
             </div>
             <div class="card-body px-lg-5 py-lg-5">
-              <div class="text-center text-muted mb-4">
-                <small>Or sign in with credentials</small>
-              </div>
-              <div class="login">
-                <h2 class="login-header">Log in</h2>
-                <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
-              
-                  <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-                    <input type="email" placeholder="Email" formControlName="email">
-                  </p>
-              
-                  <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
-                    <div *ngIf="formControls.email.errors.required">Email is required</div>
+
+                
+               <form role="form" [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative" [ngClass]="{ 'has-error': isSubmitted && formControls.loginid.errors }">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input type="email" formControlName="loginid" placeholder="loginid" class="form-control" id="example3cols1Input" >
+                  </div>
+                  <div *ngIf="isSubmitted && formControls.loginid.errors" class="help-block">
+                    <div *ngIf="formControls.loginid.errors.required">Email is required</div>
                   </div>
               
-                  <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
-                    <input type="password" placeholder="Password" formControlName="password">
-                  </p>
-              
-                  <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
-                    <div *ngIf="formControls.password.errors.required">Password is required</div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-merge input-group-alternative"  [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input class="form-control" type="password" placeholder="Password" formControlName="password">
+                  
+                    <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+                      <div *ngIf="formControls.password.errors.required">Password is required</div>
+                    </div>
                   </div>
-              
-                  <p>
-                    <input type="submit" value="Log in">
-                  </p>
-                </form>
-              </div> 
+                </div>
+                <div class="custom-control custom-control-alternative custom-checkbox">
+                  <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+                  <label class="custom-control-label" for=" customCheckLogin">
+                    <span class="text-muted">Remember me</span>
+                  </label>
+                </div>
+                <div class="text-center">
+                  <button type="submit" value="submit" class="btn btn-primary my-4">Sign in</button>
+                </div>
+              </form>
+
+               
             </div>
           </div>
           <div class="row mt-3">
@@ -74,3 +82,4 @@
       </div>
     </div>
   </div>
+  

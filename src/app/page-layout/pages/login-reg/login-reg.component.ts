@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
 import { Router } from  '@angular/router';
 import { Login } from  './login';
 import { AuthService } from  '../../../services/auth.service';
+import { SnackbarErrorService } from '../../../component-services/snackbar-error.service';
 
 @Component({
   selector: 'app-login-reg',
@@ -11,27 +12,49 @@ import { AuthService } from  '../../../services/auth.service';
 })
 export class LoginRegComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder ) { }
+  @Output() errorEmit = new EventEmitter();
+  
+  constructor(private authService: AuthService, 
+    private _rout: Router, 
+    private formBuilder: FormBuilder,
+    private snackerror: SnackbarErrorService ) { }
+
   loginForm: FormGroup;
   isSubmitted  =  false;
-
+  public responce_obj : object;
   ngOnInit() {
     this.loginForm  =  this.formBuilder.group({
-      email: ['', Validators.required],
+      loginid: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
   get formControls() { return this.loginForm.controls; }
 
-  login(){
-    console.log(this.loginForm.value);
-    this.isSubmitted = true;
-    if(this.loginForm.invalid){
-      return;
+  login()
+  {
+
+    this.authService.login(this.loginForm.value)
+    .subscribe(data => { 
+      this.responce_obj = data
+      if(this.responce_obj['status'])
+      {
+          localStorage.setItem('ACCESS_TOKEN',<any>data['token'])
+          this._rout.navigate(['/dash'])
+      }
+      else
+      {
+          localStorage.clear();
+          console.log(this.responce_obj['responce_status_massage']); 
+      }
     }
-    this.authService.login(this.loginForm.value);
-    this.router.navigateByUrl('/dash');
+    , (error) => {  
+                    console.log(error.statusText); 
+                    this.snackerror.show('hello');
+                    //alert(`Something Went Wrong. Please Try again later ${error.statusText}`); 
+                     /*this.errorEmit.emit(error)*/ 
+                  }
+    )
   }
 
 }

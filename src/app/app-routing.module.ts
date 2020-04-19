@@ -6,12 +6,18 @@ import { AuthGuard } from './services/auth.guard';
 const routes: Routes = [
   {
     path:'',
-    loadChildren:()=>  import(`./page-layout/pages.module`).then(p => p.PagesModule) 
+    loadChildren:()=>  import(`./page-layout/pages.module`).then(p => p.PagesModule),
+    data: {
+      breadcrumb: null
+    } 
   },
   {
     path:'dash',
     canActivate:[AuthGuard],
-    loadChildren:()=>  import(`./dashboard-layout/dashboard.module`).then(d => d.DashboardModule) 
+    loadChildren:()=>  import(`./dashboard-layout/dashboard.module`).then(d => d.DashboardModule),
+    data: {
+      breadcrumb: 'DashBoard'
+    } 
   }
 ];
 
