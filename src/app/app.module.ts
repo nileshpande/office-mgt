@@ -12,13 +12,17 @@ import { AuthService  } from './services/auth.service';
 import { AuthGuard } from './services/auth.guard';
 import { SnackbarerrorComponent } from './component-services/snackbarerror/snackbarerror.component';
 import {BreadcrumbModule} from 'angular-crumbs';
+import { MypipePipe } from './custompipes/mypipe.pipe';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SnackbarerrorComponent
+    SnackbarerrorComponent,
+ 
+    
   ],
   imports: [
     BrowserModule,

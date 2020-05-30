@@ -14,12 +14,12 @@ export class AuthService {
 
   public login(userInfo: Login):Observable<any>
   {
-    return this.http.post<any>(`${this.API_URL}/login.php`,userInfo)
+    return this.http.post<any>(`${this.API_URL}login.php`,userInfo);
     //.pipe( catchError(this.handleError) );   
     //.pipe( retry(3),catchError(this.handleError) );  for rettry api 
   }
   
-  
+
 
   public isLoggedIn()
   {

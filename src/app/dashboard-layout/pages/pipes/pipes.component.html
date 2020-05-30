@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header bg-transparent">
+                <h3 class="mb-0">Custome Pipe</h3>
+            </div>
+            <div class="card-body text-black">
+                <li>Here is lenght of sting calcualted and multiplied <br>
+                    by passed argument number:- <strong> {{ abc | mypipe:8 }} </strong></li>
+                    <li>{{clone.classonevariable}}</li>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card bg-gradient-default shadow">
+            <div class="card-header bg-transparent">
+                <h3 class="mb-0 text-white">Default Pipe</h3>
+            </div>
+            <div class="card-body text-white">
+                <li class="">Lower Case pipe:- {{abc | lowercase}} </li>
+                <li>Upper Case pipe:- {{abc | uppercase}} </li>
+                <li>Title Case pipe:- {{abc | titlecase}} </li>
+            </div>
+        </div>
+    </div>
+</div>

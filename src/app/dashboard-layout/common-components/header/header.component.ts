@@ -11,7 +11,12 @@ import { distinctUntilChanged, map, subscribeOn } from 'rxjs/operators';
 export class HeaderComponent implements OnInit {
  
   
-  constructor() { }
+  router: string;
+
+  constructor(public _router: Router){
+
+          this.router = _router.url; 
+    }
 
   
   ngOnInit() {

@@ -17,12 +17,12 @@ import { trigger,transition,animate,style } from '@angular/animations';
 })
 export class SnackbarerrorComponent implements OnInit {
 
-  private show = false;
-  private message: string = 'This is snackbar';
-  private type:string = 'success';
-  private snackbarSubscription: Subscription;
+  public show = false;
+  public message: string = 'This is snackbar';
+  public type:string = 'success';
+  public snackbarSubscription: Subscription;
 
-  constructor(private snackbarService: SnackbarErrorService ) { }
+  constructor(public snackbarService: SnackbarErrorService ) { }
 
   ngOnInit() {
     this.snackbarSubscription = this.snackbarService.snackbarstate. 

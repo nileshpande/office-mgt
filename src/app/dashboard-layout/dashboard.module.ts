@@ -10,17 +10,20 @@ import { TopNavComponent } from './common-components/top-nav/top-nav.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { AddNewEmpComponent } from './pages/add-new-emp/add-new-emp.component';
 import {BreadcrumbModule} from 'angular-crumbs';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PipesComponent } from './pages/pipes/pipes.component';
+import { MypipePipe } from '../custompipes/mypipe.pipe';
 
 @NgModule({
   declarations: [
     SideNavComponent, HeaderComponent, 
     FooterComponent,DashboardLayoutComponent, 
     TopNavComponent, DashboardPageComponent, 
-    AddNewEmpComponent
+    AddNewEmpComponent, PipesComponent,MypipePipe
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule,BreadcrumbModule
+    DashboardRoutingModule,BreadcrumbModule,FormsModule, ReactiveFormsModule
   ]
 })
 export class DashboardModule { }
