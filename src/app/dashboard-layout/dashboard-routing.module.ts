@@ -4,6 +4,7 @@ import { DashboardLayoutComponent } from './dashboard-layout/dashboard-layout.co
 import { AddNewEmpComponent } from './pages/add-new-emp/add-new-emp.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { PipesComponent } from './pages/pipes/pipes.component';
+import { EmpListComponent } from './pages/emp-list/emp-list.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,12 @@ const routes: Routes = [
         path:'pipes', component: PipesComponent,
         data: {
           breadcrumb: 'Pipe Demo'
+        },
+      },
+      { 
+        path:'emp-list', component: EmpListComponent,
+        data: {
+          breadcrumb: 'Emp List'
         },
       }
     ]

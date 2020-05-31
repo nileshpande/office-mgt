@@ -15,5 +15,9 @@ export class OrganisationsService {
   {
     return this.http.post<any>(`${this.API_URL}organisation_api/add-new-employee.php`,JSON.stringify(formsubmit));
   }
+  public get():Observable<any>
+  {
+    return this.http.get<any>(`${this.API_URL}organisation_api/get-emp-list.php`);
+  }
 
 }

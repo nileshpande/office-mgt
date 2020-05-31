@@ -13,13 +13,15 @@ import {BreadcrumbModule} from 'angular-crumbs';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PipesComponent } from './pages/pipes/pipes.component';
 import { MypipePipe } from '../custompipes/mypipe.pipe';
+import { DirectoneDirective } from '../customdirectives/directone.directive';
+import { EmpListComponent } from './pages/emp-list/emp-list.component';
 
 @NgModule({
   declarations: [
     SideNavComponent, HeaderComponent, 
     FooterComponent,DashboardLayoutComponent, 
     TopNavComponent, DashboardPageComponent, 
-    AddNewEmpComponent, PipesComponent,MypipePipe
+    AddNewEmpComponent, PipesComponent,MypipePipe,DirectoneDirective, EmpListComponent
   ],
   imports: [
     CommonModule,
